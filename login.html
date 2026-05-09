@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Admin Panel</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+    <div class="login-card">
+        <div class="login-header">
+            <h1>Panel Administrativo</h1>
+            <p>Acceso para administradoras</p>
+        </div>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="dni">DNI</label>
+                <input type="text" id="dni" placeholder="Ingresa tu DNI" required>
+            </div>
+            <div class="input-group">
+                <label for="pass">Clave (4 dígitos)</label>
+                <input type="password" id="pass" maxlength="4" placeholder="****" required>
+            </div>
+            <button type="submit" class="btn-login">Ingresar</button>
+        </form>
+        <p id="error-msg" class="error-text"></p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyCnhVRBninIa_mEq6-ACDYFNoWpRxDgAuc",
+        authDomain: "minitienda-647d0.firebaseapp.com",
+        projectId: "minitienda-647d0",
+        storageBucket: "minitienda-647d0.firebasestorage.app",
+        messagingSenderId: "83193235641",
+        appId: "1:83193235641:web:930d304e88a778204cf368",
+        measurementId: "G-X77MB5XV7M"
+      };
+      
+      // Inicializar Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
